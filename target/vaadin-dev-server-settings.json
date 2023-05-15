@@ -1,0 +1,18 @@
+{
+  "frontendFolder": "/Users/gabrielrezende/Developer/Faculdade/devfullstack/atividades/flow-crm-tutorial/./frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "/Users/gabrielrezende/Developer/Faculdade/devfullstack/atividades/flow-crm-tutorial/./frontend/generated/jar-resources",
+  "staticOutput": "/Users/gabrielrezende/Developer/Faculdade/devfullstack/atividades/flow-crm-tutorial/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "/Users/gabrielrezende/Developer/Faculdade/devfullstack/atividades/flow-crm-tutorial/target/classes/META-INF/VAADIN/config",
+  "frontendBundleOutput": "/Users/gabrielrezende/Developer/Faculdade/devfullstack/atividades/flow-crm-tutorial/target/classes/META-INF/VAADIN/webapp",
+  "devBundleOutput": "/Users/gabrielrezende/Developer/Faculdade/devfullstack/atividades/flow-crm-tutorial/src/main/dev-bundle/webapp",
+  "devBundleStatsOutput": "/Users/gabrielrezende/Developer/Faculdade/devfullstack/atividades/flow-crm-tutorial/src/main/dev-bundle/config",
+  "jarResourcesFolder": "/Users/gabrielrezende/Developer/Faculdade/devfullstack/atividades/flow-crm-tutorial/./frontend/generated/jar-resources",
+  "generatedFlowImportsFolder": "target/frontend",
+  "themeName": "flowcrmtutorial",
+  "clientServiceWorkerSource": "/Users/gabrielrezende/Developer/Faculdade/devfullstack/atividades/flow-crm-tutorial/target/sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}
