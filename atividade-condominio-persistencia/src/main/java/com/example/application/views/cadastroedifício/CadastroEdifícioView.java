@@ -36,7 +36,6 @@ public class CadastroEdifícioView extends Div {
     private Button botaoCancelar = new Button("Cancelar");
     private Button botaoSalvar = new Button("Salvar");
 
-    private Binder<SampleAddress> binder = new Binder<>(SampleAddress.class);
 
     public CadastroEdifícioView(SampleAddressService addressService, EdificioRepository edificioRepository) {
         this.edificioRepository = edificioRepository;
@@ -46,7 +45,6 @@ public class CadastroEdifícioView extends Div {
         add(createFormLayout());
         add(createButtonLayout());
 
-        binder.bindInstanceFields(this);
 
         clearForm();
 
