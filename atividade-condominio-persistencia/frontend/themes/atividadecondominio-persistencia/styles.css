@@ -1,0 +1,8 @@
+@import url('./main-layout.css');
+@import url('./views/cadastro-edifício-view.css');
+@import url('./views/cadastro-apartamento-view.css');
+@import url('./views/cadastro-morador-view.css');
+@import url('@fontsource/ibm-plex-sans/index.css');    html {
+--lumo-font-family: IBM Plex Sans;
+
+    }
