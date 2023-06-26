@@ -3,6 +3,8 @@ package com.example.application.data.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity(name = "Edificios")
 @Table(name="Edificios")
 @Getter
@@ -17,4 +19,7 @@ public class Edificio {
     private Long id;
     private String nome;
     private String endereco;
+
+    @OneToMany(mappedBy = "edificio", cascade = CascadeType.ALL)
+    private List<Apartamento> apartamentos;
 }
