@@ -1,6 +1,8 @@
 package com.example.application.views.cadastroapartamento;
 
+import com.example.application.data.entity.Edificio;
 import com.example.application.data.entity.SampleAddress;
+import com.example.application.data.service.EdificioRepository;
 import com.example.application.data.service.SampleAddressService;
 import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.Component;
@@ -16,23 +18,32 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.spring.annotation.SpringComponent;
+import com.vaadin.flow.spring.annotation.UIScope;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
+@SpringComponent
+@UIScope
 @PageTitle("Cadastro Apartamento")
 @Route(value = "cadastro-apartamento", layout = MainLayout.class)
 public class CadastroApartamentoView extends Div {
 
-    private TextField street = new TextField("Street address");
-    private TextField postalCode = new TextField("Postal code");
-    private TextField city = new TextField("City");
-    private ComboBox<String> state = new ComboBox<>("State");
-    private ComboBox<String> country = new ComboBox<>("Country");
-
-    private Button cancel = new Button("Cancel");
-    private Button save = new Button("Save");
+    private final EdificioRepository edificioRepository;
+    private TextField numeroApartamento = new TextField("Número do apartamento");
+    private TextField andar = new TextField("Andar");
+    private TextField area = new TextField("Área");
+    private ComboBox<String> situacao = new ComboBox<>("Situação");
+    private ComboBox<Edificio> edificios = new ComboBox<>("Edificio");
+    private Button botaoCancelar = new Button("Cancelar");
+    private Button botaoSalvar = new Button("Salvar");
 
     private Binder<SampleAddress> binder = new Binder<>(SampleAddress.class);
 
-    public CadastroApartamentoView(SampleAddressService addressService) {
+    @Autowired
+    public CadastroApartamentoView(SampleAddressService addressService, EdificioRepository edificioRepository) {
+        this.edificioRepository = edificioRepository;
         addClassName("cadastro-apartamento-view");
 
         add(createTitle());
@@ -42,40 +53,35 @@ public class CadastroApartamentoView extends Div {
         binder.bindInstanceFields(this);
 
         clearForm();
-
-        cancel.addClickListener(e -> clearForm());
-        save.addClickListener(e -> {
-            addressService.update(binder.getBean());
-            Notification.show(binder.getBean().getClass().getSimpleName() + " stored.");
-            clearForm();
-        });
     }
 
     private Component createTitle() {
-        return new H3("Address");
+        return new H3("Apartamento");
     }
 
     private Component createFormLayout() {
         FormLayout formLayout = new FormLayout();
-        formLayout.add(street, 2);
-        postalCode.setAllowedCharPattern("\\d");
-        country.setItems("Country 1", "Country 2", "Country 3");
-        state.setItems("State A", "State B", "State C", "State D");
-        formLayout.add(postalCode, city, state, country);
+        List<Edificio> edificioList = edificioRepository.findAll();
+        formLayout.add(numeroApartamento, 2);
+        edificios.setItems(edificioList);
+        andar.setAllowedCharPattern("\\d");
+        area.setAllowedCharPattern("\\d");
+        //country.setItems("Country 1", "Country 2", "Country 3");
+        situacao.setItems("Alugado", "Financiado", "Quitado");
+        formLayout.add(numeroApartamento, andar, area, situacao);
         return formLayout;
     }
 
     private Component createButtonLayout() {
         HorizontalLayout buttonLayout = new HorizontalLayout();
         buttonLayout.addClassName("button-layout");
-        save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        buttonLayout.add(save);
-        buttonLayout.add(cancel);
+        botaoSalvar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        buttonLayout.add(botaoSalvar);
+        buttonLayout.add(botaoCancelar);
         return buttonLayout;
     }
 
     private void clearForm() {
-        this.binder.setBean(new SampleAddress());
     }
 
 }
