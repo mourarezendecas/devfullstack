@@ -17,4 +17,12 @@ public class Apartamento {
     private int andar;
     private double area; //nao existe metragem
     private String situacao; //alugado, financiado, quitado
+
+    @ManyToOne
+    @JoinColumn(name="edifico_id")
+    private Edificio edificio;
+
+    @OneToOne
+    @JoinColumn(name="morador_id")
+    private Morador morador;
 }

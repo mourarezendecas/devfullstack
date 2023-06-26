@@ -17,4 +17,8 @@ public class Morador{
     private String nome;
     private String cpf;
     private String telefone;
+
+    @OneToOne
+    @JoinColumn(name = "apartamento_id")
+    private Apartamento apartamento;
 }
