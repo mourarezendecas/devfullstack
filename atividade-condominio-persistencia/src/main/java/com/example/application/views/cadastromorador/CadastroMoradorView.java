@@ -1,17 +1,16 @@
 package com.example.application.views.cadastromorador;
 
 import com.example.application.data.entity.Apartamento;
+import com.example.application.data.entity.Edificio;
 import com.example.application.data.entity.Morador;
 import com.example.application.data.service.ApartamentoRepository;
 import com.example.application.data.service.MoradorRepository;
 import com.example.application.data.service.SamplePersonService;
 import com.example.application.views.MainLayout;
+import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.charts.model.Select;
-import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.component.customfield.CustomField;
 import com.vaadin.flow.component.dependency.Uses;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.Div;
@@ -36,12 +35,12 @@ import java.util.List;
 @Uses(Icon.class)
 public class CadastroMoradorView extends Div {
 
-    private final Object moradorRepository;
+    private final MoradorRepository moradorRepository;
     private final ApartamentoRepository apartamentoRepository;
     private TextField nome = new TextField("Nome do morador");
     private TextField cpf = new TextField("CPF do morador");
     private TextField telefone = new TextField("Telefone do morador");
-
+    private Select<Apartamento> apartamentoSelect;
     private Button botaoCancelar = new Button("Cancelar");
     private Button botaoSalvar = new Button("Salvar");
 
@@ -67,11 +66,12 @@ public class CadastroMoradorView extends Div {
     private Component createFormLayout() {
         FormLayout formLayout = new FormLayout();
 
-        List<Morador> apartamentoList = MoradorRepository.findAll();
-        apartamentoSelect = new Select<>();
+        List<Apartamento> apartamentoList = apartamentoRepository.findAll();
+
+        apartamentoSelect = new Select<Apartamento>();
         apartamentoSelect.setLabel("Apartamento");
         apartamentoSelect.setItems(apartamentoList);
-        apartamentoSelect.setItemLabelGenerator(Apartamento::getNome);
+        apartamentoSelect.setItemLabelGenerator(Apartamento::toString);
 
         cpf.setAllowedCharPattern("\\d");
         formLayout.add(cpf, 2);

@@ -25,4 +25,9 @@ public class Apartamento {
     @OneToOne
     @JoinColumn(name="morador_id")
     private Morador morador;
+
+    @Override
+    public String toString() {
+        return "Apartamento no.: " + numero;
+    }
 }
