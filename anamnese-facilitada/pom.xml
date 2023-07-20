@@ -2,23 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!-- Project from https://start.vaadin.com/project/ebe5e0b8-4b6e-4eb1-bd33-60a727724cdf -->
-    <groupId>com.grupo1</groupId>
-    <artifactId>projeto-final</artifactId>
-    <name>projeto-final</name>
+    <!-- Project from https://start.vaadin.com/project/1d2df2fb-b776-45ec-b408-d5571288dee1 -->
+    <groupId>com.dfs</groupId>
+    <artifactId>anamnesefacilitada</artifactId>
+    <name>anamnesefacilitada</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
-        <java.version>17</java.version>
-        <vaadin.version>24.0.5</vaadin.version>
-        <selenium.version>4.8.3</selenium.version>
+        <java.version>19</java.version>
+        <vaadin.version>24.1.3</vaadin.version>
+        <selenium.version>4.10.0</selenium.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.6</version>
+        <version>3.1.0</version>
     </parent>
 
     <repositories>
@@ -66,12 +66,6 @@
         </dependency>
 
         <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <optional>true</optional>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
@@ -104,7 +98,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5961</jvmArguments>
+                    <jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5400</jvmArguments>
                     <wait>500</wait>
                     <maxAttempts>240</maxAttempts>
                 </configuration>

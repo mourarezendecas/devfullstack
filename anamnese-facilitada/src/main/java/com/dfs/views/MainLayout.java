@@ -1,10 +1,5 @@
-package com.example.application.views;
+package com.dfs.views;
 
-import com.example.application.views.cadastroapartamento.CadastroApartamentoView;
-import com.example.application.views.cadastroedifício.CadastroEdifícioView;
-import com.example.application.views.cadastromorador.CadastroMoradorView;
-import com.example.application.views.viewapartamento.ApartamentoView;
-import com.example.application.views.viewedificio.EdificioView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Footer;
@@ -13,10 +8,8 @@ import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Header;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.sidenav.SideNav;
-import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.theme.lumo.LumoUtility;
-import org.vaadin.lineawesome.LineAwesomeIcon;
 
 /**
  * The main view is a top-level placeholder for other views.
@@ -33,7 +26,7 @@ public class MainLayout extends AppLayout {
 
     private void addHeaderContent() {
         DrawerToggle toggle = new DrawerToggle();
-        toggle.getElement().setAttribute("aria-label", "Menu toggle");
+        toggle.setAriaLabel("Menu toggle");
 
         viewTitle = new H2();
         viewTitle.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
@@ -42,7 +35,7 @@ public class MainLayout extends AppLayout {
     }
 
     private void addDrawerContent() {
-        H1 appName = new H1("Atividade Condominio - Persistencia");
+        H1 appName = new H1("Anamnese facilitada");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
         Header header = new Header(appName);
 
@@ -53,14 +46,6 @@ public class MainLayout extends AppLayout {
 
     private SideNav createNavigation() {
         SideNav nav = new SideNav();
-
-        nav.addItem(
-                new SideNavItem("Cadastro Edifício", CadastroEdifícioView.class, LineAwesomeIcon.BUILDING.create()));
-        nav.addItem(new SideNavItem("Cadastro Apartamento", CadastroApartamentoView.class,
-                LineAwesomeIcon.HOUSE_DAMAGE_SOLID.create()));
-        nav.addItem(new SideNavItem("Cadastro Morador", CadastroMoradorView.class, LineAwesomeIcon.USER.create()));
-        nav.addItem(new SideNavItem("Listar Edifícios", EdificioView.class, LineAwesomeIcon.FILE.create()));
-        nav.addItem(new SideNavItem("Listar Apartamentos", ApartamentoView.class, LineAwesomeIcon.FILE.create()));
 
         return nav;
     }
