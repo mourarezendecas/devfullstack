@@ -3,8 +3,8 @@ package com.dfs.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity(name="Apartamentos")
-@Table(name="Apartamentos")
+@Entity(name="Nutricionistas")
+@Table(name="Nutricionistas")
 @Getter
 @Setter
 @NoArgsConstructor
