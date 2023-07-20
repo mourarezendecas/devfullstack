@@ -25,8 +25,10 @@ public class PacienteModel {
     String telefone;
 
     int horasDeSono;
-    Boolean bebidasAlcoolicas;
     Boolean tabagismo;
+
+    @OneToMany
+    List<BebidasAlcoolicas> bebidasAlcoolicas;
 
     @OneToMany
     List<AtividadeFisicaModel> atividadesFisicas;
