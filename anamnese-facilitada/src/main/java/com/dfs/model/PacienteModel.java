@@ -31,4 +31,6 @@ public class PacienteModel {
     @OneToMany
     List<AtividadeFisicaModel> atividadesFisicas;
 
+    @OneToOne
+    DadosSocioeconomicosModel dadosSocioeconomicos;
 }
