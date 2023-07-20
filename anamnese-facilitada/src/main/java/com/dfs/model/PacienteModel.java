@@ -35,4 +35,7 @@ public class PacienteModel {
 
     @OneToOne
     DadosSocioeconomicosModel dadosSocioeconomicos;
+
+    @OneToOne
+    SituacaoSaudeModel situacaoSaude;
 }
