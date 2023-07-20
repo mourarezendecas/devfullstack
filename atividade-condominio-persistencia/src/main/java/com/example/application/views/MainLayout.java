@@ -4,6 +4,8 @@ import com.example.application.views.cadastroapartamento.CadastroApartamentoView
 import com.example.application.views.cadastroedifício.CadastroEdifícioView;
 import com.example.application.views.cadastromorador.CadastroMoradorView;
 import com.example.application.views.readall.ReadAllView;
+import com.example.application.views.viewapartamento.ApartamentoView;
+import com.example.application.views.viewedificio.EdificioView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Footer;
@@ -58,7 +60,8 @@ public class MainLayout extends AppLayout {
         nav.addItem(new SideNavItem("Cadastro Apartamento", CadastroApartamentoView.class,
                 LineAwesomeIcon.HOUSE_DAMAGE_SOLID.create()));
         nav.addItem(new SideNavItem("Cadastro Morador", CadastroMoradorView.class, LineAwesomeIcon.USER.create()));
-        nav.addItem(new SideNavItem("Read All", ReadAllView.class, LineAwesomeIcon.FILE.create()));
+        nav.addItem(new SideNavItem("Listar Edifícios", EdificioView.class, LineAwesomeIcon.FILE.create()));
+        nav.addItem(new SideNavItem("Listar Apartamentos", ApartamentoView.class, LineAwesomeIcon.FILE.create()));
 
         return nav;
     }

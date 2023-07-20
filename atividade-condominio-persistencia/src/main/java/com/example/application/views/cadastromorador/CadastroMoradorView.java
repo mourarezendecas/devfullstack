@@ -45,7 +45,7 @@ public class CadastroMoradorView extends Div {
     private Button botaoSalvar = new Button("Salvar");
 
     @Autowired
-    public CadastroMoradorView(SamplePersonService personService, MoradorRepository moradorRepository, ApartamentoRepository apartamentoRepository) {
+    public CadastroMoradorView(MoradorRepository moradorRepository, ApartamentoRepository apartamentoRepository) {
         this.apartamentoRepository = apartamentoRepository;
         this.moradorRepository = moradorRepository;
 
