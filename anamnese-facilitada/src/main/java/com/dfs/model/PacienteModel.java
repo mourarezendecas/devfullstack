@@ -28,4 +28,7 @@ public class PacienteModel {
     Boolean bebidasAlcoolicas;
     Boolean tabagismo;
 
+    @OneToMany
+    List<AtividadeFisicaModel> atividadesFisicas;
+
 }
