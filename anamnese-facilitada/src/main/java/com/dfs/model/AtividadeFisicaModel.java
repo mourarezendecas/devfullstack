@@ -15,8 +15,9 @@ public class AtividadeFisicaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-    private int duracaoEmMinutos;
+    private String tipo;
+    private int frequencia;
+    private int duracao;
 
     @OneToOne
     PacienteModel paciente;
