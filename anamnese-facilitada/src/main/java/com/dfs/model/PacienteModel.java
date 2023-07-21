@@ -41,4 +41,7 @@ public class PacienteModel {
 
     @OneToOne
     DadosAntropometricos dadosAntropometricos;
+
+    @OneToOne
+    HistoricoAlimentarHabitual historicoAlimentarHabitual;
 }
