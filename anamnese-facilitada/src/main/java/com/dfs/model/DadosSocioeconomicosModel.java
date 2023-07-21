@@ -1,5 +1,6 @@
 package com.dfs.model;
 
+import com.dfs.enums.Escolaridade;
 import jakarta.persistence.*;
 import lombok.*;
 
