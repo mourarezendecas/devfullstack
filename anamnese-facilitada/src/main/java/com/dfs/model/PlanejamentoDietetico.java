@@ -18,11 +18,14 @@ public class PlanejamentoDietetico {
     private double taxaMetabolicaBasal;
     private double necessidadeEnergetica;
 
-    public double calculaTaxaMetabolicaBasal(int idade, double massaCorporal){
+    //void por enquanto, depois passar para double
+    public void calculaTaxaMetabolicaBasal(int idade, double massaCorporal){
 
     }
 
-    public double calculaNecessidadeEnergetica(int idade, String sexo, double altura, double massaCorporal, int CAF){
+
+    //void por enquanto, depois passar para double
+    public void calculaNecessidadeEnergetica(int idade, String sexo, double altura, double massaCorporal, int CAF){
         //CAF: COEFICIENTE DE ATIVIDADE FISICA 
     }
 }
