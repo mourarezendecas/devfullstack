@@ -1,1 +1,34 @@
 @import url('./main-layout.css');
+
+.registro-nutri-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Optional: This will make the view take the full available height */
+}
+
+.botao-cadastrar-nutri{
+    background-color: #656B68;
+    color: #FFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container-cadastro-nutri{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.container-titulo-cadastro-nutri{
+    background-color: #656B68;
+    color: #FFF; /* Set the text color to white */
+    text-align: left; /* Align text to the left */
+    border-radius: 4px;
+    font-weight: 250;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-tela-cadastro{
+    color: #FFF;
+}
