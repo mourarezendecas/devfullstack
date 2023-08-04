@@ -13,7 +13,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
 
-@PageTitle("Cadastro de Nutricionistas")
+@PageTitle("Cadastro de nutricionistas")
 @SpringComponent
 @UIScope
 @Route("cadastro-nutricionista")
@@ -55,7 +55,7 @@ public class RegistroNutriView extends VerticalLayout {
 
         H1 title = new H1("Anamneasy");
         title.addClassName("titulo-tela-cadastro");
-        Paragraph description = new Paragraph("App's description.");
+        Paragraph description = new Paragraph("Agente facilitador");
         container.add(title,description);
         container.getStyle().set("margin", "25px");
 
