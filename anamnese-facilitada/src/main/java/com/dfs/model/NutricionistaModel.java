@@ -15,7 +15,7 @@ public class NutricionistaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String CRN;
+    private String crn;
     private String nome;
     private String email;
     private String senha;

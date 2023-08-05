@@ -1,26 +1,26 @@
 package com.dfs.views;
 
+import com.dfs.model.NutricionistaModel;
+import com.dfs.repositories.NutricionistaRepository;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.login.LoginI18n;
 import com.vaadin.flow.component.login.LoginOverlay;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.PasswordField;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
-
-import java.awt.*;
 
 @PageTitle("Login de nutricionistas")
 @SpringComponent
 @UIScope
 @Route("login-nutricionista")
 public class LoginNutriView extends VerticalLayout {
-    public LoginNutriView() {
+    final NutricionistaRepository repository;
+    public LoginNutriView(NutricionistaRepository repository) {
+        this.repository = repository;
         add(createLogin());
     }
 
@@ -41,6 +41,18 @@ public class LoginNutriView extends VerticalLayout {
 
         loginForm.setI18n(i18n);
 
+        loginForm.addLoginListener(event -> {
+            String crn = event.getUsername();
+            String senha = event.getPassword();
+            // Exemplo hipotético de autenticação:
+            boolean autenticado = autenticarUsuario(crn, senha);
+            if (autenticado) {
+                Notification.show("Login realizado com sucesso!");
+            } else {
+                loginForm.setError(true);
+            }
+        });
+
         loginForm.setOpened(true);
         return loginForm;
     }
@@ -48,5 +60,14 @@ public class LoginNutriView extends VerticalLayout {
     public Component createButton(){
         Button registerButton = new Button("Registrar-se");
         return registerButton;
+    }
+
+    public boolean autenticarUsuario(String crn, String senha) {
+        NutricionistaModel nutricionista = repository.findByCrn(crn);
+        if (nutricionista != null && nutricionista.getSenha().equals(senha)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
