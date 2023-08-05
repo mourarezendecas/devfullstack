@@ -3,6 +3,7 @@ package com.dfs.views;
 import com.dfs.model.NutricionistaModel;
 import com.dfs.repositories.NutricionistaRepository;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.login.LoginI18n;
 import com.vaadin.flow.component.login.LoginOverlay;
@@ -13,7 +14,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
 
-@PageTitle("Login de nutricionistas")
+@PageTitle("Anamneasy | Login ")
 @SpringComponent
 @UIScope
 @Route("login-nutricionista")
@@ -42,12 +43,10 @@ public class LoginNutriView extends VerticalLayout {
         loginForm.setI18n(i18n);
 
         loginForm.addLoginListener(event -> {
-            String crn = event.getUsername();
-            String senha = event.getPassword();
-            // Exemplo hipotético de autenticação:
-            boolean autenticado = autenticarUsuario(crn, senha);
-            if (autenticado) {
+            if (autenticarUsuario(event.getUsername(), event.getPassword())) {
+                UI.getCurrent().navigate("main-page");
                 Notification.show("Login realizado com sucesso!");
+                loginForm.setOpened(false);
             } else {
                 loginForm.setError(true);
             }

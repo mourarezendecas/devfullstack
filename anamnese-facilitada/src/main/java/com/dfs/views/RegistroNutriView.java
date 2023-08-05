@@ -17,7 +17,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
 
-@PageTitle("Cadastro de nutricionistas")
+@PageTitle("Anamneasy | Cadastro")
 @SpringComponent
 @UIScope
 @Route("cadastro-nutricionista")
