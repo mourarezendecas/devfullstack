@@ -1,9 +1,13 @@
 package com.dfs.views;
 
+import com.dfs.model.NutricionistaModel;
+import com.dfs.repositories.NutricionistaRepository;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.PasswordField;
@@ -22,8 +26,10 @@ public class RegistroNutriView extends VerticalLayout {
     TextField nome = new TextField("Nome");
     EmailField email = new EmailField("E-mail");
     PasswordField senha = new PasswordField("Senha");
-    PasswordField confirmaSenha = new PasswordField("Confirme a senha");
-    public RegistroNutriView() {
+    final NutricionistaRepository repository;
+
+    public RegistroNutriView(NutricionistaRepository repository) {
+        this.repository = repository;
         addClassName("registro-nutri-view");
         add(createContainerRegister());
     }
@@ -82,8 +88,33 @@ public class RegistroNutriView extends VerticalLayout {
         botaoCadastrar.addClassName("botao-cadastrar-nutri");
         botaoCadastrar.setWidth("310px");
         botaoCadastrar.getStyle().set("margin","25px");
+        botaoCadastrar.addClickListener(e->cadastrarNutricionista());
         return botaoCadastrar;
     }
 
+    public void cadastrarNutricionista(){
+        if(repository.findByCrn(crn.getValue())!=null){
+            Notification.show("CRN já cadastrado!")
+                    .addThemeVariants(NotificationVariant.LUMO_ERROR);
+        }else{
+            NutricionistaModel nutricionista = new NutricionistaModel();
+            nutricionista.setCrn(crn.getValue());
+            nutricionista.setNome(nome.getValue());
+            nutricionista.setEmail(email.getValue());
+            nutricionista.setSenha(senha.getValue());
+
+            repository.save(nutricionista);
+            Notification.show("Cadastro realizado com sucesso!")
+                    .addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+            clearForm();
+        }
+    }
+
+    public void clearForm(){
+        crn.clear();
+        nome.clear();
+        email.clear();
+        senha.clear();
+    }
 
 }
