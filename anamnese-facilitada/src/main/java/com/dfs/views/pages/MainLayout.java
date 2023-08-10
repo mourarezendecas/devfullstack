@@ -1,4 +1,4 @@
-package com.dfs.views;
+package com.dfs.views.pages;
 
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;

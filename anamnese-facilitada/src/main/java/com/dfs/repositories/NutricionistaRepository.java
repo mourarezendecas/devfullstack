@@ -1,6 +1,6 @@
 package com.dfs.repositories;
 
-import com.dfs.model.NutricionistaModel;
+import com.dfs.model.nutricionista.NutricionistaModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

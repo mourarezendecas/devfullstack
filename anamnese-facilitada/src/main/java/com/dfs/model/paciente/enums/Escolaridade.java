@@ -1,4 +1,4 @@
-package com.dfs.enums;
+package com.dfs.model.paciente.enums;
 
 public enum Escolaridade {
     SUPERIOR_COMPLETO("Superior Completo"),

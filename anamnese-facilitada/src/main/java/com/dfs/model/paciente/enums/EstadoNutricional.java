@@ -1,4 +1,4 @@
-package com.dfs.enums;
+package com.dfs.model.paciente.enums;
 
 public enum EstadoNutricional {
     BAIXO_PESO("Baixo Peso"),
