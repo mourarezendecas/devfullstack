@@ -17,7 +17,7 @@ import com.vaadin.flow.spring.annotation.UIScope;
 @PageTitle("Anamneasy | Login ")
 @SpringComponent
 @UIScope
-@Route("login-nutricionista")
+@Route("")
 public class LoginNutriView extends VerticalLayout {
     final NutricionistaRepository repository;
     public LoginNutriView(NutricionistaRepository repository) {
