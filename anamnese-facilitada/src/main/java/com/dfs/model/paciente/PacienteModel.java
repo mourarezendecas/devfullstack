@@ -4,6 +4,7 @@ import com.dfs.model.paciente.enums.Sexo;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class PacienteModel {
 
     String nome;
     Sexo sexo;
-    Date dataNasc;
+    LocalDate dataNasc;
     String telefone;
 
     int horasDeSono;
