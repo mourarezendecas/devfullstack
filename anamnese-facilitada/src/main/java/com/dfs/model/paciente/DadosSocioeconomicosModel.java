@@ -1,6 +1,6 @@
-package com.dfs.model;
+package com.dfs.model.paciente;
 
-import com.dfs.enums.Escolaridade;
+import com.dfs.model.paciente.enums.Escolaridade;
 import jakarta.persistence.*;
 import lombok.*;
 

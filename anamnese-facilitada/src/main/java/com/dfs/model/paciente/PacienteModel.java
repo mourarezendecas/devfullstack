@@ -1,6 +1,6 @@
-package com.dfs.model;
+package com.dfs.model.paciente;
 
-import com.dfs.enums.Sexo;
+import com.dfs.model.paciente.enums.Sexo;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,4 +1,4 @@
-package com.dfs.model;
+package com.dfs.model.nutricionista;
 
 import jakarta.persistence.*;
 import lombok.*;

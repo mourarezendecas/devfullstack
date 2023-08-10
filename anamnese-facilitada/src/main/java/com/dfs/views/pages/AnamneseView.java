@@ -1,4 +1,4 @@
-package com.dfs.views;
+package com.dfs.views.pages;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;

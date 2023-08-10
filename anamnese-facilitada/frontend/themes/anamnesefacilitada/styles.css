@@ -32,3 +32,9 @@
 .titulo-tela-cadastro{
     color: #FFF;
 }
+
+.center-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}

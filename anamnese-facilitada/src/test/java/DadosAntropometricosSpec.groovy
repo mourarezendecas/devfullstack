@@ -1,5 +1,5 @@
-import com.dfs.enums.EstadoNutricional
-import com.dfs.model.DadosAntropometricos
+import com.dfs.model.paciente.enums.EstadoNutricional
+import com.dfs.model.paciente.DadosAntropometricos
 import spock.lang.Specification
 
 class DadosAntropometricosSpec extends Specification{

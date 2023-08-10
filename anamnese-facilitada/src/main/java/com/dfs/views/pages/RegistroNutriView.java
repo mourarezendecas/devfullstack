@@ -1,6 +1,6 @@
-package com.dfs.views;
+package com.dfs.views.pages;
 
-import com.dfs.model.NutricionistaModel;
+import com.dfs.model.nutricionista.NutricionistaModel;
 import com.dfs.repositories.NutricionistaRepository;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
